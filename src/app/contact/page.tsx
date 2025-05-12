@@ -6,7 +6,7 @@ export default function ContactPage() {
             <main className="min-h-screen bg-gradient-to-br from-[#6b21a8] to-[#1a0033] text-[#f0f0f0] flex flex-col items-center justify-center px-6 py-24 text-center gap-6">
                 <h1 className="text-4xl sm:text-5xl font-bold">Contact Me</h1>
                 <p className="text-[#dddddd] max-w-xl text-base sm:text-lg leading-relaxed">
-                    I'm always open to new opportunities, collaborations, or just chatting about tech.
+                    I&#39;m always open to new opportunities, collaborations, or just chatting about tech.
                     Feel free to reach out through any of the channels below.
                 </p>
                 <ul className="text-lg flex flex-col gap-4">
