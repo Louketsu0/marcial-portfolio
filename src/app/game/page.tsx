@@ -49,8 +49,8 @@ export default function GamePage() {
         let paddleDisabled = false;
         let inverted = false;
 
-        const bricks = Array.from({ length: brickColumnCount }, (_, c) =>
-            Array.from({ length: brickRowCount }, (_, r) => ({
+        const bricks = Array.from({ length: brickColumnCount }).map((_, c) =>
+            Array.from({ length: brickRowCount }).map((_, r) => ({
                 x: 0,
                 y: 0,
                 status: 1,
@@ -58,6 +58,7 @@ export default function GamePage() {
                 powerup: Math.random() < 0.15 ? powerupLetters[Math.floor(Math.random() * powerupLetters.length)] : null,
             }))
         );
+
 
         const fallingLetters = [];
 
@@ -242,7 +243,8 @@ export default function GamePage() {
             document.removeEventListener("keydown", keyDownHandler);
             document.removeEventListener("keyup", keyUpHandler);
         };
-    }, [started, paused]);
+    }, [started, paused, lives, flashText]);
+
 
     return (
         <PageWrapper>
