@@ -49,15 +49,18 @@ export default function GamePage() {
         let paddleDisabled = false;
         let inverted = false;
 
-        const bricks = Array.from({ length: brickColumnCount }).map((_, c) =>
-            Array.from({ length: brickRowCount }).map((_, r) => ({
+        const bricks = Array.from({ length: brickColumnCount }).map((__, colIndex) =>
+            Array.from({ length: brickRowCount }).map((__, rowIndex) => ({
                 x: 0,
                 y: 0,
                 status: 1,
                 color: colors[Math.floor(Math.random() * colors.length)],
-                powerup: Math.random() < 0.15 ? powerupLetters[Math.floor(Math.random() * powerupLetters.length)] : null,
+                powerup: Math.random() < 0.15
+                    ? powerupLetters[Math.floor(Math.random() * powerupLetters.length)]
+                    : null,
             }))
         );
+
 
 
         const fallingLetters = [];
@@ -222,13 +225,13 @@ export default function GamePage() {
                 }
             }
 
-            if (!paddleDisabled) {
+            if(!paddleDisabled) {
                 if (!inverted) {
-                    if (rightPressed && paddleX < canvasW - paddleWidth) paddleX += 5;
+                    if (rightPressed && paddleX < canvas.width - 90) paddleX += 5;
                     else if (leftPressed && paddleX > 0) paddleX -= 5;
                 } else {
                     if (rightPressed && paddleX > 0) paddleX -= 5;
-                    else if (leftPressed && paddleX < canvasW - paddleWidth) paddleX += 5;
+                    else if (leftPressed && paddleX < canvas.width - 90) paddleX += 5;
                 }
             }
 
