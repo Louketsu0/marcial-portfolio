@@ -35,7 +35,6 @@ export default function Home() {
                         { src: "/icons/javascript.png", alt: "JavaScript" },
                         { src: "/icons/html.png", alt: "HTML" },
                         { src: "/icons/css.png", alt: "CSS" },
-                        { src: "/icons/windows.png", alt: "Windows" },
                         { src: "/icons/linux.png", alt: "Linux" },
                     ].map(({ src, alt }) => (
                         <div
